@@ -1,7 +1,7 @@
 import streamlit as st
 import openai
 import os
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 
 # TODO: add user auth and when user is logged in it adds a button at the bottom that links to the user's LinkedIn account and allows them to post the tweet.
 
@@ -16,7 +16,7 @@ hide_st_style = """
 st.markdown(hide_st_style, unsafe_allow_html=True)
 
 
-load_dotenv()
+# load_dotenv()
 
 openai.api_key = os.environ.get("OPENAI_API_KEY")
 
