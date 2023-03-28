@@ -5,7 +5,8 @@ import os
 from tqdm import tqdm
 
 # TODO: add user auth and when user is logged in it adds a button at the bottom that links to the user's Medium account and allows them to post the tweet.
-
+# TODO: move twitter and linkedin to homepage so don't have to go back and forth 
+# TODO: find a way to keep the output generated so it does not have to regenerate every time you go back to the homepage
 
 # Hide Streamlit Menu and Footer
 hide_st_style = """
@@ -32,7 +33,7 @@ Title:
 third_prompt_prefix = """
 Please use markdown to format the output from Prompt #2 with a title, headers, and bullet points where necessary. Add citations to support your points.
 """
-
+@st.cache(show_spinner=False, suppress_st_warning=True, allow_output_mutation=True)
 def generate_action(user_input):
     with st.spinner("Generating response..."):
         st.text("")  # Empty line to fix spinner size
