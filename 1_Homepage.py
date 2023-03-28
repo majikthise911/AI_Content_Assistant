@@ -4,6 +4,9 @@ import os
 from dotenv import load_dotenv
 from tqdm import tqdm
 
+# TODO: add user auth and when user is logged in it adds a button at the bottom that links to the user's Medium account and allows them to post the tweet.
+
+
 # Hide Streamlit Menu and Footer
 hide_st_style = """
             <style>
@@ -27,7 +30,7 @@ Title:
 
 # Prompt #3
 third_prompt_prefix = """
-Please format the output from Prompt #2 with a title, headers, and bullet points where necessary. Add citations to support your points.
+Please use markdown to format the output from Prompt #2 with a title, headers, and bullet points where necessary. Add citations to support your points.
 """
 
 def generate_action(user_input):
@@ -45,7 +48,7 @@ def generate_action(user_input):
 
         # I build Prompt #2.
         second_prompt = f"""
-        Take the table of contents and title of the blog post below and generate a blog post written in the style of Paul Graham. Make it feel like a story. Don't just list the points. Go deep into each one. Explain why. You must add citations to support your points.
+        Take the table of contents and title of the blog post below and generate a blog post written in the style of Paul Graham. Make it feel like a story. Don't just list the points. Go deep into each one. Explain why. Use markdown formatting. You must add citations to support your points.
 
         Title: {user_input}
 
@@ -94,8 +97,15 @@ def generate_action(user_input):
 
 st.title("OpenAI Prompt Chaining Demo")
 
-user_input = st.text_input("Enter the title of your blog post:")
-# TODO: Add session state to save the user input and import it into the next page. Then inject into the twitter post prompt and generate the post.
+user_input = st.text_input("Enter the title of your blog post:", "Who invented the internet?")
+
+# save user input to session state so that we can use it in the next page
+st.session_state.user_input = user_input
+
 if st.button("Generate"):
     result = generate_action(user_input)
-    st.write(result["output"])
+    output_textbox = st.text_area("Output", value=result["output"], height=1000)
+    copy_button = st.button("Copy")
+    if copy_button:
+        st.write("Copying to clipboard...")
+        st.experimental_set_query_params(output_textbox.encode("utf-8"))
