@@ -104,7 +104,8 @@ st.session_state.user_input = user_input
 
 if st.button("Generate"):
     result = generate_action(user_input)
-    output_textbox = st.text_area("Output", value=result["output"], height=1000)
+    st.session_state.final_output = result["output"]  # Save the final output to session state
+    output_textbox = st.text_area("Output", value=st.session_state.final_output, height=1000)
     copy_button = st.button("Copy")
     if copy_button:
         st.write("Copying to clipboard...")
