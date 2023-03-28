@@ -103,11 +103,11 @@ user_input = st.text_input("Enter the title of your blog post:", "Who invented t
 # save user input to session state so that we can use it in the next page
 st.session_state.user_input = user_input
 
-if st.button("Generate"):
-    result = generate_action(user_input)
-    st.session_state.final_output = result["output"]  # Save the final output to session state
-    output_textbox = st.text_area("Output", value=st.session_state.final_output, height=1000)
-    copy_button = st.button("Copy")
-    if copy_button:
-        st.write("Copying to clipboard...")
-        st.experimental_set_query_params(output_textbox.encode("utf-8"))
+# if st.button("Generate"):
+result = generate_action(user_input)
+st.session_state.final_output = result["output"]  # Save the final output to session state
+output_textbox = st.text_area("Output", value=st.session_state.final_output, height=1000)
+copy_button = st.button("Copy")
+if copy_button:
+    st.write("Copying to clipboard...")
+    st.experimental_set_query_params(output_textbox.encode("utf-8"))
