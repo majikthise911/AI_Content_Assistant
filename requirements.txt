@@ -11,6 +11,7 @@ gunicorn>=20.1.0
 streamlit_option_menu==0.3.2
 openai
 cvxopt==1.3.0
+dotenv
 # STREAMLIT_CONFIG_DIR=/app/.streamlit
 
 
