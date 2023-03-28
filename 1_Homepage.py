@@ -6,7 +6,8 @@ from tqdm import tqdm
 
 # TODO: add user auth and when user is logged in it adds a button at the bottom that links to the user's Medium account and allows them to post the tweet.
 # TODO: move twitter and linkedin to homepage so don't have to go back and forth 
-# TODO: find a way to keep the output generated so it does not have to regenerate every time you go back to the homepage
+# TODO: find a way to keep the output generated so it does not have to regenerate every time you go back to the homepage - complete 
+# TODO: A+ find a way to allow for the cache to be refreshed when the user changes the input
 
 # Hide Streamlit Menu and Footer
 hide_st_style = """
@@ -105,8 +106,7 @@ st.session_state.user_input = user_input
 
 # if st.button("Generate"):
 result = generate_action(user_input)
-st.session_state.final_output = result["output"]  # Save the final output to session state
-output_textbox = st.text_area("Output", value=st.session_state.final_output, height=1000)
+output_textbox = st.text_area("Output", value=result["output"], height=1000)
 copy_button = st.button("Copy")
 if copy_button:
     st.write("Copying to clipboard...")
