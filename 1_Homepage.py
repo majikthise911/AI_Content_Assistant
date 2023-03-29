@@ -8,6 +8,8 @@ from tqdm import tqdm
 # TODO: move twitter and linkedin to homepage so don't have to go back and forth 
 # TODO: find a way to keep the output generated so it does not have to regenerate every time you go back to the homepage - complete 
 # TODO: A+ find a way to allow for the cache to be refreshed when the user changes the input
+# TODO: maybe make it so user must enter their own api key 
+# TODO: make it so you can save your stories to a database and then you can go back and edit them
 
 # Hide Streamlit Menu and Footer
 hide_st_style = """
