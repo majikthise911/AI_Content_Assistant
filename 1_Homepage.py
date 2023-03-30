@@ -36,7 +36,7 @@ Title:
 third_prompt_prefix = """
 Please use markdown to format the output from Prompt #2 with a title, headers, and bullet points where necessary. Add citations to support your points.
 """
-@st.cache(show_spinner=False, suppress_st_warning=True, allow_output_mutation=True) # allow output mutation is needed to allow the cache to be refreshed when the user changes the input
+@st.cache_data(experimental_allow_widgets=True)  # 👈 Set the parameter
 def generate_action(user_input):
     with st.spinner("Generating response..."):
         st.text("")  # Empty line to fix spinner size
