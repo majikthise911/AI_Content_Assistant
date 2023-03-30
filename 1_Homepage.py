@@ -103,7 +103,7 @@ def generate_action(user_input):
             # Send over the Prompt #2's output to our UI instead of Prompt #1's.
             return {"output": final_output}
 
-st.title("OpenAI Prompt Chaining Demo")
+st.title("OpenAI Prompt Chaining: Blog Post Generator")
 
 st.write("Examples: Who invented the internet? What is the best way to learn Python? The Science of Sleep: How Our Dreams Shape Our Lives")
 user_input = st.text_input("Enter the title of your blog post:")
