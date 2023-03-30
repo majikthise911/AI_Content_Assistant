@@ -105,7 +105,8 @@ def generate_action(user_input):
 
 st.title("OpenAI Prompt Chaining Demo")
 
-user_input = st.text_input("Enter the title of your blog post:", "Who invented the internet?")
+st.write("Examples: Who invented the internet? What is the best way to learn Python? The Science of Sleep: How Our Dreams Shape Our Lives")
+user_input = st.text_input("Enter the title of your blog post:")
 
 # save user input to session state so that we can use it in the next page
 st.session_state.user_input = user_input
