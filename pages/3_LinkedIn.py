@@ -24,7 +24,7 @@ else:
 
     st.write(f"Generating a Twitter post based on the title: {user_input}.")
 
-    @st.cache(show_spinner=False, suppress_st_warning=True, allow_output_mutation=True)
+    @st.cache_data(experimental_allow_widgets=True, show_spinner=False)  # 👈 Set the parameter
     def generate_tweet(user_input):
         prompt = f"Generate an edgy LinkedIn post based on '{user_input}' that incorporates modern slang vocabulary and demonstrates intelligence. Make sure to include at least one link and one emoji in your post. The post should be optimized for maximum viewing by the LinkedIn algorithm and should be based on the user_input."
         with st.spinner("Generating post..."):
