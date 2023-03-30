@@ -36,7 +36,7 @@ Title:
 third_prompt_prefix = """
 Please use markdown to format the output from Prompt #2 with a title, headers, and bullet points where necessary. Add citations to support your points.
 """
-@st.cache(show_spinner=False, suppress_st_warning=True, allow_output_mutation=True)
+@st.cache(show_spinner=False, suppress_st_warning=True, allow_output_mutation=True) # allow output mutation is needed to allow the cache to be refreshed when the user changes the input
 def generate_action(user_input):
     with st.spinner("Generating response..."):
         st.text("")  # Empty line to fix spinner size
@@ -48,7 +48,10 @@ def generate_action(user_input):
             max_tokens=250
         )
 
-        base_prompt_output = base_completion.choices[0].text.strip()
+        base_prompt_output = base_completion.choices[0].text.strip() # the psuedo code below is the same as this line
+        # psuedo code: base_prompt_output = base_completion call the choices method on the base_completion object and then call the text method on the choices object and then call the strip method on the text object
+        # the choices method returns a list of objects which we then call the text method on to get the text of the object and then we call the strip method on the text to remove the whitespace
+        # this is effectively cleaning up the output from the API call
 
         # I build Prompt #2.
         second_prompt = f"""
