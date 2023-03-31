@@ -109,7 +109,6 @@ st.title("OpenAI Prompt Chaining: Blog Post Generator")
 
 st.write("Examples: Who invented the internet? What is the best way to learn Python? The Science of Sleep: How Our Dreams Shape Our Lives")
 st.code('Who invented the internet? ')
-st.markdown('`Who invented the internet? `')
 user_input = st.text_input("Enter the title of your blog post:")
 
 # save user input to session state so that we can use it in the next page
