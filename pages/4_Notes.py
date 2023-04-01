@@ -20,7 +20,7 @@ st.title("Notes Organizer")
 if "user_input" not in st.session_state:
     st.warning("Please go to the first page and enter a title for your blog post!")
 else:
-    user_input2 = st.text_input("Paste your messy notes here, and we'll clean them up for you!")
+    user_input2 = st.text_input("Paste your messy notes here, and we'll clean them up for you!", height=350)
 
     @st.cache_data(experimental_allow_widgets=True, show_spinner=False)  # 👈 Set the parameter
     def generate_tweet(user_input2):
