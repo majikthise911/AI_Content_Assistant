@@ -41,7 +41,7 @@ else:
 
     tweet = generate_tweet(user_input2)
 
-    st.text_area(label="Copy tweet", value=tweet, height=350)
+    st.text_area(label="Copy Cleaned Notes", value=tweet, height=350)
     if st.button("Copy"):
         st.write("Copied to clipboard!")  # add feedback for user
         st.experimental_set_query_params(copied=tweet)  # set query parameters to trigger browser copy
