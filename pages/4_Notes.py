@@ -20,17 +20,17 @@ st.title("Notes Organizer")
 if "user_input" not in st.session_state:
     st.warning("Paste your messy notes here, and we'll clean them up for you!")
 else:
-    user_input2 = st.text_input("Enter the title of your blog post:")
+    user_input2 = st.text_input("Paste your messy notes here, and we'll clean them up for you!")
 
     @st.cache_data(experimental_allow_widgets=True, show_spinner=False)  # 👈 Set the parameter
     def generate_tweet(user_input2):
-        prompt = f"I would like for you to do 3 things: 1. re write the following meeting notes to be more organized and concise. Write them in a way that organizes them with bullet points and numbers, titles of sections and headders if needed and 2. suggest action items with suggested deadlines and responsible party for each and 3. suggest next steps. {user_input2}."
+        prompt = f"I would like for you to do 3 things: 1. re write the following meeting notes to be more organized and concise. Write them in a way that organizes them with bullet points and numbers, titles of sections and headders if needed and 2. suggest action items with suggested deadlines and responsible party for each and 3. suggest next steps. Messy notes:{user_input2}."
         with st.spinner("Generating post..."):
             response = openai.Completion.create(
                 model="text-davinci-003",
                 prompt=prompt,
                 temperature=0.7,
-                max_tokens=500,
+                max_tokens=2000,
                 top_p=1,
                 frequency_penalty=0,
                 presence_penalty=0
