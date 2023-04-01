@@ -18,7 +18,7 @@ st.title("Notes Organizer")
 
 # Import the user input from the first page via session state
 if "user_input" not in st.session_state:
-    st.warning("Paste your messy notes here, and we'll clean them up for you!")
+    st.warning("Please go to the first page and enter a title for your blog post!")
 else:
     user_input2 = st.text_input("Paste your messy notes here, and we'll clean them up for you!")
 
