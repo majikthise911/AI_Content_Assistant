@@ -28,7 +28,7 @@ st.markdown(f'''  # DANBOT
 text = st.empty()
 show_messages(text)
 
-prompt = st.text_input("Prompt", value="Enter your message here...")
+# prompt = st.text_input("Prompt", value="Enter your message here...")
 
 long = st.text_input("Long", value="When to long the position???")
 short = st.text_input("Short", value="When to short the position???")
