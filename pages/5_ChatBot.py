@@ -20,7 +20,7 @@ model = st.sidebar.selectbox("Model", ["gpt-3.5-turbo", "gpt-4"])
 if "messages" not in st.session_state:
     st.session_state["messages"] = BASE_PROMPT
 
-st.markdown(f'''  # CHATBOT
+st.markdown(f'''  # DANBOT
 ## Model: `{model}`
 
 ''')

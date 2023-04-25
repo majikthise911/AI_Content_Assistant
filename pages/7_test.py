@@ -30,6 +30,12 @@ show_messages(text)
 
 prompt = st.text_input("Prompt", value="Enter your message here...")
 
+long = st.text_input("Long", value="When to long the position???")
+short = st.text_input("Short", value="When to short the position???")
+close = st.text_input("Close", value="When to close the position???")
+comments = st.text_input("Comments", value="Enter additional comments here...")
+
+
 if st.button("Send"):
     with st.spinner("Generating response..."):
         st.session_state["messages"] += [{"role": "user", "content": prompt}]
