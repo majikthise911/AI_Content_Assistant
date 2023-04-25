@@ -8,7 +8,7 @@ def show_messages(text):
     messages_str = [
         f"{_['role']}: {_['content']}" for _ in st.session_state["messages"][1:]
     ]
-    text.text_area("Messages", value=str("\n".join(messages_str)), height=400)
+    text.text_area("Strategy", value=str("\n".join(messages_str)), height=400)
 
 # load_dotenv() # needed to load .env file on local machine
 
