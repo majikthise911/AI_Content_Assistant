@@ -4,6 +4,17 @@ import os
 import streamlit as st
 # from dotenv import load_dotenv # needed to load .env file on local machine
 
+# Hide Streamlit Menu and Footer
+hide_st_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_st_style, unsafe_allow_html=True)
+
+
 def show_messages(text):
     messages_str = [
         f"{_['role']}: {_['content']}" for _ in st.session_state["messages"][1:]
