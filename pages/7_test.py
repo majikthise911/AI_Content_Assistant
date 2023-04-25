@@ -64,5 +64,5 @@ if st.button("Clear"):
     show_messages(text)
 
 # display an image in root directory
-st.image('Screenshot 2023-04-24 at 11.25.13 PM.png')
-st.image('Screenshot 2023-04-24 at 11.35.01 PM.png')
+st.image('image/Screenshot 2023-04-24 at 11.25.13 PM.png')
+# st.image('Screenshot 2023-04-24 at 11.35.01 PM.png')
