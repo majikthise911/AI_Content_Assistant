@@ -10,6 +10,7 @@ from tqdm import tqdm
 # TODO: A+ find a way to allow for the cache to be refreshed when the user changes the input
 # TODO: maybe make it so user must enter their own api key 
 # TODO: B make it so you can save your stories to a database and then you can go back and edit them and also save the prompts to a drop down 
+# TODO: A+ add meeting minutes page 
 # TODO: add a page that is titled "Need inspiration?" you enter a topic and it gives you a list of blog post titles that you can click on and it will take you to the blog post and then you can copy and paste the title and then you can use that as the title for your blog post
 
 # Hide Streamlit Menu and Footer
