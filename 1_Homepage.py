@@ -53,7 +53,7 @@ def generate_action(user_input):
 
         # Build Prompt #2 using GPT-4
         second_prompt = f"""
-        As an AI assistant, take the table of contents and title of the blog post below and generate a blog post written in the style of Paul Graham. Make it feel like a story. Don't just list the points. Go deep into each one. Explain why. Use markdown formatting. You must add citations to support your points.
+        Take the table of contents and title of the blog post below and generate a blog post written in the style of Paul Graham. Make it feel like a story. Don't just list the points. Go deep into each one. Explain why. Use markdown formatting. You must add citations to support your points.
 
         Title: {user_input}
 
@@ -78,7 +78,7 @@ def generate_action(user_input):
             output_parts = second_prompt_output.split("References:")
 
             citation_prompt = f"""
-            As an AI assistant, generate a list of citations for the blog post below: 
+            Generate a list of citations for the blog post below: 
 
             {output_parts[0]}
 
