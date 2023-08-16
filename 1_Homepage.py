@@ -107,7 +107,7 @@ def generate_action(user_input):
 
 st.title("OpenAI Prompt Chaining: Blog Post Generator")
 
-st.write("Examples: ")
+st.write("Examples: test ")
 st.code('Who invented the internet? ')
 st.code('What is the best way to learn Python? ')
 st.code('WThe Science of Sleep: How Our Dreams Shape Our Lives')
