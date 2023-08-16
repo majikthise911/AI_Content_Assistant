@@ -3,6 +3,7 @@ import openai
 import os
 from tqdm import tqdm
 
+# TODO: take this prompt and add it to the chain. It should be the result from this final prompt that is displayed in the text box "take the following article {final_result} and expand upon some of the main and more interesting points. give some deep detail so the reader really gets a meaningful insight into the topics and not just a high level glance. The reader should be able to walk away with actionable knowledge."
 # TODO: add user auth and when user is logged in it adds a button at the bottom that links to the user's Medium account and allows them to post the tweet.
 # TODO: move twitter and linkedin to homepage so don't have to go back and forth
 # TODO: find a way to keep the output generated so it does not have to regenerate every time you go back to the homepage - complete
@@ -99,7 +100,6 @@ def generate_action(user_input):
             return {"output": final_output}
 
 st.title("OpenAI Prompt Chaining: Blog Post Generator")
-
 st.write("Examples: ")
 st.code('Who invented the internet? ')  
 st.code('What is the best way to learn Python? ')
