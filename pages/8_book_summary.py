@@ -18,7 +18,7 @@ openai.api_key = os.environ.get("OPENAI_API_KEY")
 
 # Define base prompt prefix
 base_prompt_prefix = """
-Write me a detailed table of contents for a blog post with the title below.
+Write me a detailed table of contents for the book titled below.
 
 Title:
 """
@@ -48,7 +48,10 @@ def generate_action(user_input):
 
         # Define second prompt
         second_prompt = f"""
-        Take the table of contents and title of the blog post below and generate a blog post written in the style of Paul Graham. Make it feel like a story. Don't just list the points. Go deep into each one. Explain why. Use markdown formatting. You must add citations to support your points.
+        Take the table of contents and title of the book below and generate a detailed summary written in the style of Paul Graham. 
+        Provide a summary for each item listed in the table of contents and make it feel like a story. Don't just list the points. 
+        Go deep into each one. Explain why. Use markdown formatting. 
+        You must add citations from the book to support your points.
 
         Title: {user_input}
 
@@ -75,7 +78,7 @@ def generate_action(user_input):
 
             # Define citation prompt
             citation_prompt = f"""
-            Generate a list of citations for the blog post below:
+            Generate a list of citations for the book titled below:
 
             {output_parts[0]}
 
@@ -98,13 +101,13 @@ def generate_action(user_input):
             return {"output": final_output}
 
 # Define Streamlit interface
-st.title("OpenAI Prompt Chaining: Blog Post Generator")
+st.title("OpenAI Prompt Chaining: Book Summary Generator")
 
 st.write("Examples: ")
-st.code('Who invented the internet? ')
-st.code('What is the best way to learn Python? ')
-st.code('The Science of Sleep: How Our Dreams Shape Our Lives')
-user_input = st.text_input("Enter the title of your blog post:")
+st.code('Children of Time by Adrian Tchaikovsky ')
+st.code('The Sovereign Individual by James Dale Davidson, Peter Thiel')
+st.code('Victory by Brian Tracy')
+user_input = st.text_input("Enter the title of the book you would like to summarize:")
 
 
 # save user input to session state so that we can use it in the next page
