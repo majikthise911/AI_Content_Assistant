@@ -102,6 +102,7 @@ def generate_action(user_input):
 
 # Define Streamlit interface
 st.title("OpenAI Prompt Chaining: Book Summary Generator")
+st.markdown(''' ### Inform you book choices. Summarize then decide. ''')
 
 st.write("Examples: ")
 st.code('Children of Time by Adrian Tchaikovsky ')
