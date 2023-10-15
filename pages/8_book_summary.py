@@ -18,7 +18,7 @@ openai.api_key = os.environ.get("OPENAI_API_KEY")
 
 # Define base prompt prefix
 base_prompt_prefix = """
-Write me a detailed table of contents for the book titled below.
+Provide the correct table of contents for the book titled below.
 
 Title:
 """
