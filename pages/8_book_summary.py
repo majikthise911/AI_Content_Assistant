@@ -108,6 +108,8 @@ st.write("Examples: ")
 st.code('Children of Time by Adrian Tchaikovsky ')
 st.code('The Sovereign Individual by James Dale Davidson, Peter Thiel')
 st.code('Victory by Brian Tracy')
+st.code('The Changing World Order by Ray Dalio')
+st.code('The Network State by Balaji Srinivasan')
 user_input = st.text_input("Enter the title of the book you would like to summarize:")
 
 
