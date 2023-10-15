@@ -49,7 +49,7 @@ def generate_action(user_input):
         # Define second prompt
         second_prompt = f"""
         Take the table of contents and title of the book below and generate a detailed summary written in the style of Paul Graham. 
-        Provide a summary for each item listed in the table of contents and make it feel like a story. Don't just list the points. 
+        Provide a summary for each item listed in the table of contents, including chapters and sub-chapters and make it feel like a story. Don't just list the points. 
         Go deep into each one. Explain why. Use markdown formatting. 
         You must add citations from the book to support your points.
 
